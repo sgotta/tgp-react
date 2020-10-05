@@ -1,14 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import NotFound from "../pages/404";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Navbar from "../components/Navbar";
+import SidebarMenu from "../components/SidebarMenu";
+import Main from "../components/Main";
 
 const App = () => (
   <Router>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <Navbar />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-2">
+          <SidebarMenu />
+        </div>
+        <div className="col-10">
+          <Main />
+        </div>
+      </div>
+    </div>
   </Router>
 );
 
