@@ -1,0 +1,32 @@
+{
+    "autos": [
+        {
+            "id": 1,
+            "modelo":"Leon",
+            "marca":"Seat",
+            "año": "2017",
+            "precio": "10000"
+        },
+        {
+            "id": 2,
+            "modelo":"Enzo",
+            "marca":"Ferrari",
+            "año": "2020",
+            "precio": "1500000"
+        },
+        {
+            "id": 3,
+            "modelo":"Ka",
+            "marca":"Ford",
+            "año": "2000",
+            "precio": "400000"
+        },
+        {
+            "id": 4,
+            "modelo":"Clio",
+            "marca":"Renault",
+            "año": "2014",
+            "precio": "5000000"
+        }
+    ]
+}

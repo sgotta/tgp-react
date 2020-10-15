@@ -14,6 +14,12 @@ const SidebarMenu = () => (
       </span>{" "}
       Home
     </Link>
+    <Link to="/ABM" className="nav-link">
+      <span role="img" aria-label="Calabaza">
+      ⚛️
+      </span>{" "}
+      ABM DataTable
+    </Link>
     <Link to="/404" className="nav-link">
       <span role="img" aria-label="Escarabajo">
         🐞
