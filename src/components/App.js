@@ -10,14 +10,7 @@ const App = () => (
     <Navbar />
     <SidebarMenu />
     <div className="container-fluid">
-      {/* <div className="row"> */}
-      {/* <div className="col"> */}
-
-      {/* </div> */}
-      {/* <div className="col"> */}
       <Main />
-      {/* </div> */}
-      {/* </div> */}
     </div>
   </Router>
 );

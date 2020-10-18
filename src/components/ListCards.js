@@ -7,9 +7,7 @@ export const ListCards = ( ) => {
     const state = useFetchMovies();
     
     return (
-        <> 
-            <hr />
-            <h2> Listado de prueba </h2>
+        <div className="container text-center">
             <div className="card-grid" >
                 <div className="row">
                 {
@@ -24,6 +22,6 @@ export const ListCards = ( ) => {
                 }
                 </div>
             </div>
-        </>
+            </div>
     )
 }

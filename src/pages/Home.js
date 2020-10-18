@@ -1,5 +1,4 @@
 import React from "react";
-import { ListCards } from "../components/ListCards";
 
 const Home = () => (
   <React.Fragment>
@@ -27,7 +26,6 @@ const Home = () => (
         ></img>
       </div>
     </div>
-    <ListCards />
   </React.Fragment>
 );
 
