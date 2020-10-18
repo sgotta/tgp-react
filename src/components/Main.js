@@ -7,8 +7,8 @@ import NotFound from "../pages/404";
 
 
 const Main = () => (
-  <main className="p-2 text-center">
-    <div>
+  <main id="main" className="pt-4 text-center">
+    <div className="container">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Abm" component={ABMDataTable} />

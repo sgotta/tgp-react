@@ -1,6 +1,4 @@
-
-const API_KEY = 'cc92689'
-
+import { API_KEY } from "../config";
 
 //parametros usados para las busquedas
 //-----------------------------------------------------
@@ -8,23 +6,20 @@ const API_KEY = 'cc92689'
 //      s       ------> Movie title to search for.
 //
 const OMDbAPI = (tipoBusqueda, valor) => {
-    return (`http://www.omdbapi.com/?apikey=${API_KEY}&${tipoBusqueda}=${valor}`)
-}
+  return `http://www.omdbapi.com/?apikey=${API_KEY}&${tipoBusqueda}=${valor}`;
+};
 
+export const getCardsResults = async () => {
+  const res = await fetch(OMDbAPI("s", "back+to+the+future"));
+  const { Search } = await res.json();
 
+  const cards = Search.map((item) => {
+    return {
+      titulo: item.Title,
+      subtitulo: item.Year,
+      descripcion: item.Type,
+    };
+  });
 
-export const getCardsResults = async() => {
-    
-    const res = await fetch( OMDbAPI('s','back+to+the+future') );
-    const { Search } = await res.json();
-
-    const cards = Search.map((item) => {
-        return {
-            titulo: item.Title,
-            subtitulo: item.Year,
-            descripcion: item.Type 
-        } 
-    });
-
-    return cards;
-}
+  return cards;
+};
