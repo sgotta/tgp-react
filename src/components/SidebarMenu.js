@@ -64,6 +64,12 @@ const SidebarMenu = () => {
       </span>{" "}
       {collapse?"Películas":""}
     </Link>
+    <Link to="/personajes" className="nav-link">
+      <span role="img" aria-label="Personajes">
+      😎
+      </span>{" "}
+      {collapse?"Personajes":""}
+    </Link>
       <Link to="/404" className="nav-link">
         <span role="img" aria-label="Escarabajo">
           🐞

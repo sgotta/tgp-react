@@ -24,3 +24,5 @@ yarn-error.log*
 
 # Visual code debugger configuration
 /.vscode
+
+package-lock.json
