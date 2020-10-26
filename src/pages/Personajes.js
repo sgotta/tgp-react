@@ -13,23 +13,23 @@ export class Personajes extends Component{
      }
    
      _changeText =(e)=>{
-          this.setState({nombrepersonaje:e.target.value});
+        //   this.setState({nombrepersonaje:e.target.value});
+          this.setState({filtroBusqueda:e.target.value});
       }
     
-     _handleSubmit =(e)=>{
-         e.preventDefault();
-         this.setState({filtroBusqueda:this.state.nombrepersonaje});
-         const filtro = this.state.filtroBusqueda;
-         console.log("submitFILTRO "+filtro);
-         
-        
-    }
+    //  _handleSubmit =(e)=>{
+    //      e.preventDefault();
+    //      this.setState({filtroBusqueda:this.state.nombrepersonaje});
+    //      const filtro = this.state.filtroBusqueda;
+    //      console.log("submitFILTRO "+filtro);
+    // }
+
     render(){
         return (
            
             <div className="container">
                 <h1 className="text-left">Star Wars</h1>
-                <form onSubmit={this._handleSubmit}>
+                {/* <form onSubmit={this._handleSubmit}> */}
                     <div className="row">
                         <div className="col-sm">
                             <div className="form-group text-left">
@@ -43,12 +43,12 @@ export class Personajes extends Component{
                             </div>
 
                         </div>
-                        <div className="col-sm text-botton">
+                        {/* <div className="col-sm text-botton">
                             <button  className="btn btn-primary ">Buscar</button>
-                        </div>
+                        </div> */}
                     </div>
                    
-                </form>
+                {/* </form> */}
                
                 <div className="row">
                     <TablaPersonas filtro={this.state.filtroBusqueda} />
