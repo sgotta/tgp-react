@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const CardItem = ( props ) => {
+export const ItemMovie = ( props ) => {
     
     const {id, title, year, type} = props;
     
@@ -17,7 +17,7 @@ export const CardItem = ( props ) => {
     )
 }
 
-CardItem.propTypes = {
+ItemMovie.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,

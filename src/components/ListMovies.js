@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { CardItem } from './CardItem.js';
+import { ItemMovie } from './ItemMovie.js';
 
-export const ListCards = React.memo( ( { search } ) => {   
+export const ListMovies = React.memo( ( { search } ) => {   
     
-    console.log('me volvi a dibujar ListCards')
+    console.log('me volvi a dibujar ListMovies')
     
     const [state, setstate] = useState({
         data:null,
@@ -12,7 +12,7 @@ export const ListCards = React.memo( ( { search } ) => {
 
     useEffect(() => {
 
-        console.log('me dibuje por el useEffect ListCards')
+        console.log('me dibuje por el useEffect ListMovies')
 
         const { title, year, type } = search
         
@@ -66,7 +66,7 @@ export const ListCards = React.memo( ( { search } ) => {
                                 {
                                     state.data?.map((card) => {
                                         return (
-                                            <CardItem
+                                            <ItemMovie
                                                 key={card.id}
                                                 { ...card } 
                                             />

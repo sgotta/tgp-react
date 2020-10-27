@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-export const FormSearch = React.memo( ({setSearch}) => {
+export const FormSearchMovies = React.memo( ({setSearch}) => {
     
-    console.log('me volvi a dibujar FormSearch')
+    console.log('me volvi a dibujar FormSearchMovies')
     
     const defaultInputs = {
         title:'',
@@ -10,27 +10,27 @@ export const FormSearch = React.memo( ({setSearch}) => {
         type:''
     }
 
-    const [formValues, setFormValues] = useState(defaultInputs);
+    const [inputValues, setInputValues] = useState(defaultInputs);
     
-    const {title, year, type} = formValues; 
+    const {title, year, type} = inputValues; 
 
     const handleInputChange = (event) => {
 
         const { target } = event;
         
-        setFormValues({
-            ...formValues,
+        setInputValues({
+            ...inputValues,
             [ target.name ]: target.value //se usa de esta forma para un manejo independiente de input   
         })
     }
 
     const handleSubmit = (event) => {
-        setSearch(formValues);
-        console.log('se actualizo search con :',formValues)  
+        setSearch(inputValues);
+        console.log('se actualizo search con :',inputValues)  
     }
 
     const handleInputsClean = (event) => {
-        setFormValues(defaultInputs)
+        setInputValues(defaultInputs)
     }
 
 

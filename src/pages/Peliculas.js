@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ListCards } from "../components/ListCards";
-import { FormSearch } from "../components/FormSearch";
+import { ListMovies } from "../components/ListMovies";
+import { FormSearchMovies } from "../components/FormSearchMovies";
 
 const Peliculas = () => {
   console.log('se creo el componente Peliculas')
@@ -11,9 +11,9 @@ const Peliculas = () => {
     <div className="container text-center">
       <div className="card-grid" >
         <h1>Busqueda de Peliculas</h1>
-        <FormSearch setSearch={setSearch} />
+        <FormSearchMovies setSearch={setSearch} />
         <hr />
-        <ListCards search={search} />
+        <ListMovies search={search} />
       </div>
     </div>
   )
