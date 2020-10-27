@@ -2,21 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const CardItem = ( props ) => {
-    const {titulo, subtitulo, descripcion} = props;
+    
+    const {id, title, year, type} = props;
     
     return (
-        <div class="card text-white bg-secondary mb-3 animate__animated animate__fadeIn" style={{width: "18rem", margin: "1rem" }}  >
-            <div class="card-header">{titulo}</div>
-            <div class="card-body">
-                <h5 class="card-title">{subtitulo}</h5>
-                <p class="card-text">{descripcion}</p>
-            </div>
-        </div>
+        <tr>
+            <td>{title}</td>
+            <td>{year}</td>
+            <td>{type}</td>
+            <td id={id} > 
+                <span role="img" aria-label="Saludo"> 🎥 </span>
+            </td>
+        </tr>
     )
 }
 
 CardItem.propTypes = {
-    titulo: PropTypes.string.isRequired,
-    subtitulo: PropTypes.string.isRequired,
-    descripcion: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
 }
