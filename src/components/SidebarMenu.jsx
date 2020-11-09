@@ -38,40 +38,33 @@ const SidebarMenu = () => {
           />
         )}
       </span>
-      <Link to="/" className="nav-link active">
+      <Link to="/" className="nav-link active" title="Página de inicio">
         <span role="img" aria-label="Casa">
           🏠
         </span>
         <span>&nbsp;</span>
         {collapse ? 'Home' : ''}
       </Link>
-      <Link to="/abm" className="nav-link">
+      <Link to="/abm" className="nav-link" title="ABM Vehículos">
         <span role="img" aria-label="Átomo">
           ⚛️
         </span>
         <span>&nbsp;</span>
         {collapse ? 'ABM DataTable' : ''}
       </Link>
-      <Link to="/peliculas" className="nav-link">
+      <Link to="/peliculas" className="nav-link" title="Películas">
         <span role="img" aria-label="Películas">
           🎥
         </span>
         <span>&nbsp;</span>
         {collapse ? 'Películas' : ' '}
       </Link>
-      <Link to="/personajes" className="nav-link">
+      <Link to="/personajes" className="nav-link" title="Personajes">
         <span role="img" aria-label="Personajes">
           😎
         </span>
         <span>&nbsp;</span>
         {collapse ? 'Personajes' : ''}
-      </Link>
-      <Link to="/404" className="nav-link">
-        <span role="img" aria-label="Escarabajo">
-          🐞
-        </span>
-        <span>&nbsp;</span>
-        {collapse ? 'Página de error' : ''}
       </Link>
     </nav>
   );
