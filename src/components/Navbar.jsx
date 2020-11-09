@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles/Navbar.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './styles/Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className="navbar navbar-light bg-light sticky-top">
