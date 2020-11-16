@@ -12,6 +12,7 @@ class Personajes extends Component {
       error: '',
       // eslint-disable-next-line react/no-unused-state
       count: 0,
+      // eslint-disable-next-line react/no-unused-state
       items: [],
     };
   }
@@ -29,7 +30,7 @@ class Personajes extends Component {
   // }
 
   render() {
-    const { selectValue, filtroBusqueda } = this.state;
+    const { filtroBusqueda } = this.state;
     return (
       <div className="container">
         <h1 className="text-left">Star Wars</h1>

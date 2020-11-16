@@ -26,7 +26,7 @@ const TablaPersonas = (props) => {
     <div className="container-fluid">
       <table
         id="example"
-        className="table table-striped table-bordered  nowrap "
+        className="table table-striped table-bordered  nowrap"
         width="90%"
       >
         <thead>
