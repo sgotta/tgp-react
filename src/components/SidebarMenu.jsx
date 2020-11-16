@@ -66,6 +66,13 @@ const SidebarMenu = () => {
         <span>&nbsp;</span>
         {collapse ? 'Personajes' : ''}
       </Link>
+      <Link to="/productos" className="nav-link" title="Productos">
+        <span role="img" aria-label="Productos">
+          🛒
+        </span>
+        <span>&nbsp;</span>
+        {collapse ? 'Productos' : ''}
+      </Link>
     </nav>
   );
 };
