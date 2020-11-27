@@ -1,116 +1,75 @@
 import React from 'react';
-
-class ProductCategoryRow extends React.Component {
-  render() {
-    const category = this.props.category;
-    return (
-      <tr>
-        <th colSpan="2">
-          {category}
-        </th>
-      </tr>
-    );
-  }
-}
-
-class ProductRow extends React.Component {
-  render() {
-    const product = this.props.product;
-    const name = product.stocked ?
-      product.name :
-      <span style={{color: 'red'}}>
-        {product.name}
-      </span>;
-
-    return (
-      <tr>
-        <td>{name}</td>
-        <td>{product.price}</td>
-      </tr>
-    );
-  }
-}
-
-class ProductTable extends React.Component {
-  render() {
-    const rows = [];
-    let lastCategory = null;
-    
-    this.props.products.forEach((product) => {
-      if (product.category !== lastCategory) {
-        rows.push(
-          <ProductCategoryRow
-            category={product.category}
-            key={product.category} />
-        );
-      }
-      rows.push(
-        <ProductRow
-          product={product}
-          key={product.name} />
-      );
-      lastCategory = product.category;
-    });
-
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
-    );
-  }
-}
-
-class SearchBar extends React.Component {
-  render() {
-    return (
-      <form>
-        <input type="text" placeholder="Search..." />
-        <p>
-          <input type="checkbox" />
-          {' '}
-          Only show products in stock
-        </p>
-      </form>
-    );
-  }
-}
-
-class FilterableProductTable extends React.Component {
-  render() {
-    return (
-      <div>
-        <SearchBar />
-        <ProductTable products={this.props.products} />
-      </div>
-    );
-  }
-}
-
+import FilterableProductTable from '../components/productos/FilterableProductTable';
 
 const PRODUCTS = [
-  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-];
-
-class Productos extends React.Component {
-  render() {
-    return (
-      <div className="container">
-        <h1 className="text-left">Productos</h1>
-        <FilterableProductTable products={PRODUCTS} />
-      </div>
-    );
+  {
+    category: 'Artículos deportivos',
+    price: '$49.99',
+    stocked: true,
+    name: 'Pelota fútbol 5',
+  },
+  {
+    category: 'Artículos deportivos',
+    price: '$9.99',
+    stocked: true,
+    name: 'Pelota de básquet',
+  },
+  {
+    category: 'Artículos deportivos',
+    price: '$29.99',
+    stocked: false,
+    name: 'Botines fútbol 5',
+  },
+  {
+    category: 'Electrónica',
+    price: '$99.99',
+    stocked: true,
+    name: 'Samsung S10',
+  },
+  {
+    category: 'Electrónica',
+    price: '$399.99',
+    stocked: false,
+    name: 'Motorola G8 Plus',
+  },
+  {
+    category: 'Electrónica',
+    price: '$199.99',
+    stocked: true,
+    name: 'Xiaomi Mi A3',
   }
-}
+];
+const Productos = () => {
+  return (
+    <div className="container">
+      <div
+        className="alert alert-light alert-dismissible fade show mb-0"
+        role="alert"
+      >
+        Este ejemplo esta basado en el artículo de la documentación oficial
+        <span>&nbsp;&quot;</span>
+        <a
+          href="https://es.reactjs.org/docs/thinking-in-react.html"
+          target="blank"
+          className="alert-link"
+        >
+          Pensando en React
+        </a>
+        <span>&quot;.</span>
+        <button
+          type="button"
+          className="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <h1 className="text-left">Productos</h1>
+      <FilterableProductTable products={PRODUCTS} />
+    </div>
+  );
+};
 
 export default Productos;

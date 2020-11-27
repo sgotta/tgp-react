@@ -42,8 +42,13 @@ class Personajes extends Component {
               <label>Nombre del Personaje </label>
               <div className="input-group">
                 <div className="input-group-append">
-                  {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
-                  <span className="btn btn-outline-secondary">🔍</span>
+                  <span
+                    role="img"
+                    aria-label="Emoji de lupa"
+                    className="input-group-text"
+                  >
+                    🔍
+                  </span>
                 </div>
                 <input
                   type="text"
