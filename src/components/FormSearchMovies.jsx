@@ -1,35 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useForm } from '../hooks/useForm';
 
 const FormSearchMovies = React.memo(({ setSearch }) => {
-  const defaultInputs = {
+  const [inputValues, handleInputChange, handleInputsClean] = useForm({
     title: '',
     year: '',
     type: '',
-  };
-
-  const [inputValues, setInputValues] = useState(defaultInputs);
+  });
 
   const { title, year, type } = inputValues;
 
-  const handleInputChange = (event) => {
-    const { target } = event;
-
-    setInputValues({
-      ...inputValues,
-      // se usa de esta forma para un manejo independiente de input
-      [target.name]: target.value,
-    });
-  };
-
   const handleSubmit = () => {
     setSearch(inputValues);
-    // eslint-disable-next-line no-console
-    console.log('se actualizo search con :', inputValues);
-  };
-
-  const handleInputsClean = () => {
-    setInputValues(defaultInputs);
   };
 
   return (
@@ -120,7 +103,7 @@ const FormSearchMovies = React.memo(({ setSearch }) => {
 });
 
 FormSearchMovies.propTypes = {
-  setSearch: PropTypes.string.isRequired,
+  setSearch: PropTypes.func.isRequired,
 };
 
 export default FormSearchMovies;

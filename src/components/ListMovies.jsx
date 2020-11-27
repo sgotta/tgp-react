@@ -1,40 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ItemMovie from './ItemMovie';
+import { useFetchMovies } from '../hooks/useFetchMovies';
 
-// eslint-disable-next-line react/prop-types
 const ListMovies = React.memo(({ search }) => {
-  // "Yo mantendría las variables de estado independientes." -Simón.
-  const [state, setstate] = useState({
-    data: null,
-    loading: true,
-  });
-
-  useEffect(() => {
-    // eslint-disable-next-line react/prop-types
-    const { title, year, type } = search;
-
-    fetch(
-      'http://www.omdbapi.com/?apikey=cc92689&s=' +
-        `${encodeURI(title)}&y=${year}&type=${type}`
-    )
-      .then((res) => res.json())
-      .then(({ Search }) =>
-        Search?.map((item) => {
-          return {
-            id: item.imdbID,
-            title: item.Title,
-            year: item.Year,
-            type: item.Type,
-          };
-        })
-      )
-      .then((cards) => {
-        setstate({
-          data: cards,
-          loading: false,
-        });
-      });
-  }, [search]);
+  const state = useFetchMovies(
+    'http://www.omdbapi.com/?apikey=cc92689&s=' +
+      `${encodeURI(search.title)}&y=${search.year}&type=${search.type}`
+  );
 
   return (
     <div className="container text-center">
@@ -69,5 +42,10 @@ const ListMovies = React.memo(({ search }) => {
     </div>
   );
 });
+
+ListMovies.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  search: PropTypes.object.isRequired,
+};
 
 export default ListMovies;
