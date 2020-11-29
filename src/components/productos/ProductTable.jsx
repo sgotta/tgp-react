@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
 import ProductCategoryRow from './ProductCategoryRow';
+// eslint-disable-next-line import/no-unresolved
 import ProductRow from './ProductRow';
 
 class ProductTable extends React.Component {

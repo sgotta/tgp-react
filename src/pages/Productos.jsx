@@ -37,7 +37,7 @@ const PRODUCTS = [
     price: '$199.99',
     stocked: true,
     name: 'Xiaomi Mi A3',
-  }
+  },
 ];
 const Productos = () => {
   return (
