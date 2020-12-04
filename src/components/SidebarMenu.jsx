@@ -73,6 +73,13 @@ const SidebarMenu = () => {
         <span>&nbsp;</span>
         {collapse ? 'Productos' : ''}
       </Link>
+      <Link to="/apicore" className="nav-link" title="API Core">
+        <span role="img" aria-label="API Core">
+          👨‍💻
+        </span>
+        <span>&nbsp;</span>
+        {collapse ? 'API Core' : ''}
+      </Link>
     </nav>
   );
 };

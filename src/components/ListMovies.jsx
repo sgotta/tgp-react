@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ItemMovie from './ItemMovie';
-import { useFetchMovies } from '../hooks/useFetchMovies';
+import useFetchMovies from '../hooks/useFetchMovies';
 
 const ListMovies = React.memo(({ search }) => {
   const state = useFetchMovies(

@@ -12,8 +12,8 @@ const container = document.getElementById('root');
 
 // ReactDOM.render(__QUE__, __DONDE__)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <App />,
+  // </React.StrictMode>,
   container
 );

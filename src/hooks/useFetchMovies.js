@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
-export const useFetchMovies = (url) => {
+const useFetchMovies = (url) => {
   const isMounted = useRef(true);
 
   const [state, setstate] = useState({
@@ -55,3 +54,5 @@ export const useFetchMovies = (url) => {
 
   return state;
 };
+
+export default useFetchMovies;
