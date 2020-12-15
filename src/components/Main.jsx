@@ -8,6 +8,7 @@ import NotFound from '../pages/404';
 import Personajes from '../pages/Personajes';
 import Productos from '../pages/Productos';
 import APICore from '../pages/APICore';
+import DragAndDropTest from './DragAndDropTest';
 
 const Main = () => (
   <main id="main" className="pt-4 text-center">
@@ -19,6 +20,7 @@ const Main = () => (
         <Route exact path="/personajes" component={Personajes} />
         <Route exact path="/productos" component={Productos} />
         <Route exact path="/apicore" component={APICore} />
+        <Route exact path="/dragAndDropTest" component={DragAndDropTest} />
 
         <Route component={NotFound} />
       </Switch>

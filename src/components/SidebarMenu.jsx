@@ -80,6 +80,13 @@ const SidebarMenu = () => {
         <span>&nbsp;</span>
         {collapse ? 'API Core' : ''}
       </Link>
+      <Link to="/dragAndDropTest" className="nav-link" title="Drag and Drop">
+        <span role="img" aria-label="Drag and Dropyar">
+          👨‍💻
+        </span>
+        <span>&nbsp;</span>
+        {collapse ? 'Drag and Drop' : ''}
+      </Link>
     </nav>
   );
 };
